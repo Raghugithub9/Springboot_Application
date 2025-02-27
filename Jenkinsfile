@@ -40,6 +40,7 @@ pipeline {
             steps{
                 
                 //sh "docker rmi chatapplicationimage:$BUILD_NUMBER"
+                sh "systemctl start docker"
                 sh "docker build -t chatapplicationimage:$BUILD_NUMBER ."
             }
         }
@@ -48,8 +49,8 @@ pipeline {
             
             steps{
                 
-                sh "docker stop chatappcontainer"
-                sh "docker rm chatappcontainer"
+               // sh "docker stop chatappcontainer"
+               // sh "docker rm chatappcontainer"
                 sh "docker run -d --name chatappcontainer -p 8088:8080 chatapplicationimage:$BUILD_NUMBER"
             }
         }
