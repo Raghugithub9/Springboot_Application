@@ -40,7 +40,7 @@ pipeline {
             steps{
                 
                 //sh "docker rmi chatapplicationimage:$BUILD_NUMBER"
-                sh "systemctl start docker"
+               // sh "systemctl start docker"
                 sh "docker build -t chatapplicationimage:$BUILD_NUMBER ."
             }
         }
