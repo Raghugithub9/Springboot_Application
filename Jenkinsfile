@@ -10,7 +10,7 @@ pipeline {
         stage('Preparation') {
             steps {
                 // Get some code from a GitHub repository
-                git branch:main 'https://github.com/Raghugithub9/Springboot_Application.git'
+                git branch -M main 'https://github.com/Raghugithub9/Springboot_Application.git'
                 
             }
         }
