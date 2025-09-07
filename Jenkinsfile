@@ -39,9 +39,9 @@ pipeline {
             
             steps{
                 
-               sudo sh "docker rmi chatapplicationimage:$BUILD_NUMBER"
+               sh "docker rmi chatapplicationimage:$BUILD_NUMBER"
                // sh "systemctl start docker"
-               sudo sh "docker build -i chatapplicationimage:$BUILD_NUMBER ."
+               sh "docker build -t chatapplicationimage:$BUILD_NUMBER ."
             }
         }
         
